@@ -1,0 +1,70 @@
+
+from django.utils import timezone
+from MEDICATION.models import Medication,Schedule
+
+# Create medications
+plavix = Medication.objects.create(name="plavix", dosage=2, start_date="2022-04-13", end_date="2022-04-26")
+synthroid = Medication.objects.create(name="synthroid", dosage=20, start_date="2022-04-13", end_date="2025-09-17")
+aspirin = Medication.objects.create(name="aspirin", dosage=2, start_date="2022-04-06", end_date="2022-04-20")
+lipitor = Medication.objects.create(name="lipitor", dosage=23, start_date="2023-12-21", end_date="2026-08-03")
+
+# Create medication schedule for Plavix
+Schedule.objects.create(
+    medication=plavix,
+    days_of_week=0,
+    start_time="08:00:00",
+    end_time="10:00:00"
+)
+
+Schedule.objects.create(
+    medication=plavix,
+    days_of_week=2,
+    start_time="09:00:00",
+    end_time="11:00:00"
+)
+
+# Create medication schedule for Synthroid
+Schedule.objects.create(
+    medication=synthroid,
+    days_of_week=0,
+    start_time="08:00:00",
+    end_time="10:00:00"
+)
+
+Schedule.objects.create(
+    medication=synthroid,
+    days_of_week=3,
+    start_time="09:00:00",
+    end_time="11:00:00"
+)
+
+# Create medication schedule for Aspirin
+Schedule.objects.create(
+    medication=aspirin,
+    days_of_week=1,
+    start_time="10:00:00",
+    end_time="12:00:00"
+)
+
+Schedule.objects.create(
+    medication=aspirin,
+    days_of_week=3,
+    start_time="08:00:00",
+    end_time="10:00:00"
+)
+
+# Create medication schedule for Lipitor
+Schedule.objects.create(
+    medication=lipitor,
+    days_of_week=2,
+    start_time="10:00:00",
+    end_time="12:00:00"
+)
+
+Schedule.objects.create(
+    medication=lipitor,
+    days_of_week=4,
+    start_time="08:00:00",
+    end_time="10:00:00"
+)
+
